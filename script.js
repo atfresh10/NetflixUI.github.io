@@ -1,7 +1,7 @@
 const trailers = [
-  { title: "Show 1", video: "assets/trailer1.mp4" },
-  { title: "Show 2", video: "assets/trailer2.mp4" },
-  { title: "Show 3", video: "assets/trailer3.mp4" }
+  { title: "Show 1", description: "An epic sci-fi adventure.", video: "assets/trailer1.mp4" },
+  { title: "Show 2", description: "A heartwarming rom-com.", video: "assets/trailer2.mp4" },
+  { title: "Show 3", description: "A gripping crime thriller.", video: "assets/trailer3.mp4" }
 ];
 
 const feed = document.getElementById('trailer-feed');
@@ -18,6 +18,18 @@ trailers.forEach((trailer, index) => {
   video.loop = true;
   video.muted = true;
   video.playsInline = true;
+
+  const overlay = document.createElement('div');
+  overlay.classList.add('overlay');
+
+  const title = document.createElement('h2');
+  title.innerText = trailer.title;
+
+  const description = document.createElement('p');
+  description.innerText = trailer.description;
+
+  overlay.appendChild(title);
+  overlay.appendChild(description);
 
   const controls = document.createElement('div');
   controls.classList.add('controls');
@@ -40,7 +52,17 @@ trailers.forEach((trailer, index) => {
   controls.appendChild(skipButton);
   controls.appendChild(saveButton);
 
+  const watchListBtn = document.createElement('button');
+  watchListBtn.innerText = '📋 View Watch List';
+  watchListBtn.classList.add('watch-list-btn');
+  watchListBtn.addEventListener('click', () => {
+    alert('Your Watch List:\n' + (watchList.length ? watchList.join('\n') : 'No shows saved.'));
+  });
+
+  overlay.appendChild(watchListBtn);
+
   div.appendChild(video);
+  div.appendChild(overlay);
   div.appendChild(controls);
   feed.appendChild(div);
 
@@ -48,5 +70,3 @@ trailers.forEach((trailer, index) => {
 });
 
 console.log("Watch List:", watchList);
-
-

@@ -13,9 +13,11 @@ trailers.forEach((trailer, index) => {
 
   const video = document.createElement('video');
   video.src = trailer.video;
-  video.controls = true;
-  video.autoplay = false;
+  video.controls = false;
+  video.autoplay = true;
   video.loop = true;
+  video.muted = true;
+  video.playsInline = true;
 
   const controls = document.createElement('div');
   controls.classList.add('controls');

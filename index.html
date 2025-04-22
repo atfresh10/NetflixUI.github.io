@@ -2,104 +2,19 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>ShortForm Netflix Prototype</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Shortflix Prototype</title>
   <link rel="stylesheet" href="style.css" />
-  <style>
-    body {
-      margin: 0;
-      font-family: 'Segoe UI', sans-serif;
-      background-color: #000;
-      color: white;
-    }
-
-    header {
-      background-color: #e50914;
-      padding: 1em;
-      text-align: center;
-    }
-
-    .feed {
-      display: flex;
-      overflow-x: scroll;
-      scroll-snap-type: x mandatory;
-      height: 80vh;
-    }
-
-    .trailer {
-      flex: none;
-      scroll-snap-align: center;
-      width: 100vw;
-      height: 100%;
-      position: relative;
-    }
-
-    video {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
-
-    .buttons {
-      position: absolute;
-      bottom: 20px;
-      left: 50%;
-      transform: translateX(-50%);
-      display: flex;
-      gap: 20px;
-    }
-
-    .btn {
-      padding: 10px 20px;
-      border: none;
-      border-radius: 10px;
-      font-size: 16px;
-      cursor: pointer;
-    }
-
-    .like {
-      background-color: #1db954;
-    }
-
-    .dislike {
-      background-color: #b91d1d;
-    }
-  </style>
 </head>
 <body>
-  <header>
-    <h1>🎬 QuickFlick: ShortForm Netflix</h1>
-    <p>Swipe through short trailers. Decide instantly.</p>
-  </header>
-
-  <div class="feed">
-    <div class="trailer">
-      <video src="assets/trailer1.mp4" autoplay loop muted></video>
-      <div class="buttons">
-        <button class="btn like" onclick="addToWatchList('Show 1')">👍 Add</button>
-        <button class="btn dislike" onclick="dislikeTrailer('Show 1')">👎 Skip</button>
-      </div>
-    </div>
-    <div class="trailer">
-      <video src="assets/trailer2.mp4" autoplay loop muted></video>
-      <div class="buttons">
-        <button class="btn like" onclick="addToWatchList('Show 2')">👍 Add</button>
-        <button class="btn dislike" onclick="dislikeTrailer('Show 2')">👎 Skip</button>
-      </div>
-    </div>
-    <!-- Add more trailer sections here -->
+  <div class="app-container">
+    <div id="trailer-feed"></div>
   </div>
 
-  <script>
-    function addToWatchList(show) {
-      alert(`${show} added to your Watch List!`);
-      // Optionally: send to backend or localStorage
-    }
+  <div class="instructions">
+    <p>👈 Swipe left to skip · Swipe right to save 👉</p>
+  </div>
 
-    function dislikeTrailer(show) {
-      alert(`${show} will be hidden from recommendations.`);
-      // Optionally: send feedback to backend or localStorage
-    }
-  </script>
+  <script src="script.js"></script>
 </body>
 </html>

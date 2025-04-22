@@ -4,7 +4,6 @@ const trailers = [
   { title: "Show 3", video: "assets/trailer3.mp4" }
 ];
 
-
 const feed = document.getElementById('trailer-feed');
 const watchList = [];
 
@@ -18,28 +17,31 @@ trailers.forEach((trailer, index) => {
   video.autoplay = false;
   video.loop = true;
 
-  // Add swipe detection
-  let startX = 0;
-  video.addEventListener('touchstart', e => {
-    startX = e.touches[0].clientX;
+  const controls = document.createElement('div');
+  controls.classList.add('controls');
+
+  const skipButton = document.createElement('button');
+  skipButton.innerText = '⏩ Skip';
+  skipButton.addEventListener('click', () => {
+    alert(`Skipped ${trailer.title}`);
+    feed.scrollBy({ top: window.innerHeight, behavior: 'smooth' });
   });
 
-  video.addEventListener('touchend', e => {
-    const endX = e.changedTouches[0].clientX;
-    const diff = endX - startX;
-    
-    if (diff > 75) {
-      // Swipe Right = Save
-      watchList.push(trailer.title);
-      alert(`${trailer.title} added to Watch List`);
-    } else if (diff < -75) {
-      // Swipe Left = Skip
-      alert(`Skipped ${trailer.title}`);
-    }
+  const saveButton = document.createElement('button');
+  saveButton.innerText = '✅ Save';
+  saveButton.addEventListener('click', () => {
+    watchList.push(trailer.title);
+    alert(`${trailer.title} added to Watch List`);
+    feed.scrollBy({ top: window.innerHeight, behavior: 'smooth' });
   });
+
+  controls.appendChild(skipButton);
+  controls.appendChild(saveButton);
 
   div.appendChild(video);
+  div.appendChild(controls);
   feed.appendChild(div);
 });
 
 console.log("Watch List:", watchList);
+

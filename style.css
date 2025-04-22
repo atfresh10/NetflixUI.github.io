@@ -63,16 +63,18 @@ body {
 .controls {
   display: flex;
   justify-content: flex-start;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;              /* 👈 Prevent line breaks */
+  overflow-x: auto;               /* 👈 Enables horizontal scroll */
   gap: 10px;
   margin-top: 10px;
+  padding-bottom: 4px;            /* Optional: space under buttons */
 }
 
 .controls button {
   background-color: rgba(255, 255, 255, 0.1);
   color: white;
   border: none;
-  padding: 10px 14px;
+  padding: 5px 7px;
   font-size: 14px;
   border-radius: 10px;
   cursor: pointer;

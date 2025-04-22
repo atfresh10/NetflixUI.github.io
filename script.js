@@ -61,9 +61,6 @@ trailers.forEach((trailer, index) => {
     feed.scrollBy({ top: window.innerHeight, behavior: 'smooth' });
   });
 
-  controls.appendChild(skipButton);
-  controls.appendChild(saveButton);
-
   const watchListBtn = document.createElement('button');
   watchListBtn.innerText = '📋 View Watch List';
   watchListBtn.classList.add('watch-list-btn');
@@ -71,11 +68,13 @@ trailers.forEach((trailer, index) => {
     alert('Your Watch List:\n' + (watchList.length ? watchList.join('\n') : 'No shows saved.'));
   });
 
-  overlay.appendChild(watchListBtn);
+  controls.appendChild(skipButton);
+  controls.appendChild(saveButton);
+  controls.appendChild(watchListBtn);
 
+  overlay.appendChild(controls);
   div.appendChild(video);
   div.appendChild(overlay);
-  div.appendChild(controls);
   feed.appendChild(div);
 
   video.play().catch(err => console.warn("Autoplay failed:", err));

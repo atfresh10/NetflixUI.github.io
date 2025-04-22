@@ -20,10 +20,6 @@ window.addEventListener("load", () => {
     video.muted = true;
     video.playsInline = true;
 
-    video.addEventListener('loadeddata', () => {
-      video.play().catch(err => console.warn("Autoplay failed:", err));
-    });
-
     const controls = document.createElement('div');
     controls.classList.add('controls');
 
@@ -48,6 +44,11 @@ window.addEventListener("load", () => {
     div.appendChild(video);
     div.appendChild(controls);
     feed.appendChild(div);
+
+    // Attempt to play once the video is fully appended
+    requestAnimationFrame(() => {
+      video.play().catch(err => console.warn("Autoplay failed:", err));
+    });
   });
 
   console.log("Watch List:", watchList);

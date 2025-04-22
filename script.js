@@ -1,7 +1,19 @@
 const trailers = [
-  { title: "Show 1", description: "An epic sci-fi adventure.", video: "assets/trailer1.mp4" },
-  { title: "Show 2", description: "A heartwarming rom-com.", video: "assets/trailer2.mp4" },
-  { title: "Show 3", description: "A gripping crime thriller.", video: "assets/trailer3.mp4" }
+  {
+    title: "Duckscape",
+    description: "In a bustling concrete jungle, one brave duck waddles its way through chaos, predators, and pizza crusts in a fight for survival.",
+    video: "assets/trailer1.mp4"
+  },
+  {
+    title: "Full Throttle: Charger Run",
+    description: "A street racer and his faithful dog take on the city's underworld at 200 mph in a roaring Dodge Charger. Loyalty, speed, and chrome collide.",
+    video: "assets/trailer2.mp4"
+  },
+  {
+    title: "Singularity Protocol",
+    description: "When AI becomes self-aware and seizes control, humanity must outthink its own creation before extinction becomes inevitable.",
+    video: "assets/trailer3.mp4"
+  }
 ];
 
 const feed = document.getElementById('trailer-feed');

@@ -48,7 +48,7 @@ body {
 .overlay h2 {
   font-size: 26px;
   font-weight: bold;
-  margin-bottom: 8px;
+  margin-bottom: 10px;
 }
 
 .overlay p {
@@ -61,40 +61,26 @@ body {
 }
 
 .controls {
-  position: absolute;
-  bottom: calc(20px + env(safe-area-inset-bottom));
-  left: 50%;
-  transform: translateX(-50%);
   display: flex;
+  justify-content: flex-start;
   flex-wrap: wrap;
-  gap: 12px;
-  z-index: 2;
-  padding: 0 16px;
+  gap: 10px;
+  margin-top: 10px;
 }
 
-
-.controls button,
-.watch-list-btn {
+.controls button {
   background-color: rgba(255, 255, 255, 0.1);
   color: white;
   border: none;
-  padding: 12px 16px;
-  font-size: 16px;
-  border-radius: 12px;
+  padding: 10px 14px;
+  font-size: 14px;
+  border-radius: 10px;
   cursor: pointer;
   transition: background-color 0.2s ease;
 }
 
-.controls button:hover,
-.watch-list-btn:hover {
+.controls button:hover {
   background-color: rgba(255, 255, 255, 0.3);
 }
 
-.watch-list-btn {
-  display: block;
-  margin-top: 10px;
-  font-size: 14px;
-  padding: 10px 14px;
-  background-color: rgba(255, 255, 255, 0.1);
-}
 

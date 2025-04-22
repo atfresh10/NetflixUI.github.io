@@ -6,26 +6,17 @@ body {
   overflow: hidden;
 }
 
-.app-container {
+#trailer-feed {
   height: 100vh;
   width: 100vw;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  position: relative;
-}
-
-#trailer-feed {
-  height: 90vh;
-  width: 100%;
-  max-width: 480px;
   overflow-y: scroll;
   scroll-snap-type: y mandatory;
 }
 
 .trailer {
   position: relative;
-  height: 90vh;
+  height: 100vh;
+  width: 100vw;
   scroll-snap-align: start;
   display: flex;
   justify-content: center;

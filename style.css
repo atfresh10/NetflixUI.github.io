@@ -11,6 +11,7 @@ body {
   width: 100vw;
   overflow-y: scroll;
   scroll-snap-type: y mandatory;
+  scroll-behavior: smooth;
   position: relative;
 }
 
@@ -23,6 +24,7 @@ body {
   justify-content: center;
   align-items: center;
   background: black;
+  overflow: hidden;
 }
 
 .trailer video {
@@ -37,21 +39,25 @@ body {
   left: 20px;
   right: 20px;
   z-index: 2;
-  text-shadow: 0px 0px 8px rgba(0, 0, 0, 0.8);
-  max-width: 80%;
+  color: white;
+  max-width: 90vw;
+  word-wrap: break-word;
+  text-shadow: 0 0 8px rgba(0, 0, 0, 0.8);
 }
 
 .overlay h2 {
-  font-size: 28px;
-  margin-bottom: 10px;
+  font-size: 26px;
+  font-weight: bold;
+  margin-bottom: 8px;
 }
 
 .overlay p {
   font-size: 16px;
-  background-color: rgba(0, 0, 0, 0.4);
-  padding: 10px 12px;
-  border-radius: 10px;
   line-height: 1.4;
+  margin: 0;
+  padding: 10px;
+  border-radius: 10px;
+  background: rgba(0, 0, 0, 0.4);
 }
 
 .controls {
@@ -82,7 +88,10 @@ body {
 }
 
 .watch-list-btn {
+  display: block;
   margin-top: 10px;
   font-size: 14px;
   padding: 10px 14px;
+  background-color: rgba(255, 255, 255, 0.1);
 }
+

@@ -1,8 +1,8 @@
 body {
   margin: 0;
-  font-family: Arial, sans-serif;
-  background-color: #000;
-  color: #fff;
+  background: black;
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  color: white;
   overflow: hidden;
 }
 
@@ -11,6 +11,7 @@ body {
   width: 100vw;
   overflow-y: scroll;
   scroll-snap-type: y mandatory;
+  position: relative;
 }
 
 .trailer {
@@ -21,63 +22,67 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+  background: black;
 }
 
 .trailer video {
-  max-height: 100%;
-  max-width: 100%;
-  object-fit: contain; /* This keeps full frame visible */
-  background-color: black;
-}
-
-.controls {
-  position: absolute;
-  bottom: 30px;
-  left: 50%;
-  transform: translateX(-50%);
-  display: flex;
-  gap: 20px;
-  z-index: 10;
-}
-
-.controls button {
-  background-color: rgba(0, 0, 0, 0.7);
-  color: white;
-  border: none;
-  padding: 12px 20px;
-  font-size: 16px;
-  border-radius: 8px;
-  cursor: pointer;
-}
-
-.controls button:hover {
-  background-color: rgba(255, 255, 255, 0.2);
+  width: 100vw;
+  height: 100vh;
+  object-fit: cover;
 }
 
 .overlay {
   position: absolute;
-  bottom: 100px;
+  bottom: 140px;
   left: 20px;
   right: 20px;
-  color: white;
-  text-shadow: 0 0 8px rgba(0, 0, 0, 0.8);
-  z-index: 5;
-  font-family: sans-serif;
+  z-index: 2;
+  text-shadow: 0px 0px 8px rgba(0, 0, 0, 0.8);
   max-width: 80%;
 }
 
 .overlay h2 {
-  margin: 0 0 8px 0;
-  font-size: 24px;
-  font-weight: bold;
+  font-size: 28px;
+  margin-bottom: 10px;
 }
 
 .overlay p {
-  margin: 0;
   font-size: 16px;
-  line-height: 1.4;
-  background: rgba(0, 0, 0, 0.4);
-  padding: 10px;
+  background-color: rgba(0, 0, 0, 0.4);
+  padding: 10px 12px;
   border-radius: 10px;
+  line-height: 1.4;
 }
 
+.controls {
+  position: absolute;
+  bottom: 40px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 12px;
+  z-index: 2;
+}
+
+.controls button,
+.watch-list-btn {
+  background-color: rgba(255, 255, 255, 0.1);
+  color: white;
+  border: none;
+  padding: 12px 16px;
+  font-size: 16px;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.controls button:hover,
+.watch-list-btn:hover {
+  background-color: rgba(255, 255, 255, 0.3);
+}
+
+.watch-list-btn {
+  margin-top: 10px;
+  font-size: 14px;
+  padding: 10px 14px;
+}

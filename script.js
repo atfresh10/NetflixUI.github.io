@@ -19,6 +19,11 @@ trailers.forEach((trailer, index) => {
   video.muted = true;
   video.playsInline = true;
 
+  // Attempt to force autoplay on load
+  video.addEventListener('canplay', () => {
+    video.play().catch(err => console.warn("Autoplay failed:", err));
+  });
+
   const controls = document.createElement('div');
   controls.classList.add('controls');
 

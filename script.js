@@ -1,7 +1,7 @@
 const trailers = [
-  { title: "Show 1", video: "assets/trailer1.mp4" },
-  { title: "Show 2", video: "assets/trailer2.mp4" },
-  { title: "Show 3", video: "assets/trailer3.mp4" }
+  { title: "Show 1", video: "NetflixUI.github.io/assets/trailer1.mp4" },
+  { title: "Show 2", video: "NetflixUI.github.io/assets/trailer2.mp4" },
+  { title: "Show 3", video: "NetflixUI.github.io/assets/trailer3.mp4" }
 ];
 
 const feed = document.getElementById('trailer-feed');
@@ -44,4 +44,3 @@ trailers.forEach((trailer, index) => {
 });
 
 console.log("Watch List:", watchList);
-

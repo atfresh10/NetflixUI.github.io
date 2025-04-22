@@ -62,13 +62,16 @@ body {
 
 .controls {
   position: absolute;
-  bottom: 40px;
+  bottom: calc(20px + env(safe-area-inset-bottom));
   left: 50%;
   transform: translateX(-50%);
   display: flex;
+  flex-wrap: wrap;
   gap: 12px;
   z-index: 2;
+  padding: 0 16px;
 }
+
 
 .controls button,
 .watch-list-btn {

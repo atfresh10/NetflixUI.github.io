@@ -2,17 +2,23 @@ const trailers = [
   {
     title: "Duckscape",
     description: "In a bustling concrete jungle, one brave duck waddles its way through chaos, predators, and pizza crusts in a fight for survival.",
-    video: "assets/trailer1.mp4"
+    video: "assets/trailer1.mp4",
+    categories: ["comedy"],
+    rating:4
   },
   {
     title: "Full Throttle: Charger Run",
     description: "A street racer and his faithful dog take on the city's underworld at 200 mph in a roaring Dodge Charger. Loyalty, speed, and chrome collide.",
-    video: "assets/trailer2.mp4"
+    video: "assets/trailer2.mp4",
+    categories: ["comedy","racer"],
+    rating:3
   },
   {
     title: "Singularity Protocol",
     description: "When AI becomes self-aware and seizes control, humanity must outthink its own creation before extinction becomes inevitable.",
-    video: "assets/trailer3.mp4"
+    video: "assets/trailer3.mp4",
+    categories: ["distopian","thriller"],
+    rating:3
   }
 ];
 
@@ -37,11 +43,27 @@ trailers.forEach((trailer, index) => {
   const title = document.createElement('h2');
   title.innerText = trailer.title;
 
+  const categoryContainer = document.createElement('div');
+  categoryContainer.classList.add('categories');
+
+  trailer.categories.forEach(cat => {
+    const bubble = document.createElement('span');
+    bubble.classList.add('category-bubble');
+    bubble.innerText = cat;
+    categoryContainer.appendChild(bubble);
+  });
+
+  const rating = document.createElement('div');
+  rating.classList.add('rating');
+  rating.innerHTML = '★'.repeat(trailer.rating) + '☆'.repeat(5 - trailer.rating);
+
   const description = document.createElement('p');
   description.innerText = trailer.description;
 
   overlay.appendChild(title);
+  overlay.appendChild(categoryContainer);
   overlay.appendChild(description);
+  overlay.appendChild(rating);
 
   const controls = document.createElement('div');
   controls.classList.add('controls');

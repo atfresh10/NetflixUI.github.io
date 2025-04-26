@@ -17,7 +17,7 @@ const trailers = [
     title: "Singularity Protocol",
     description: "When AI becomes self-aware and seizes control, humanity must outthink its own creation before extinction becomes inevitable.",
     video: "assets/trailer3.mp4",
-    categories: ["distopian","thriller"],
+    categories: ["dystopian","thriller"],
     rating:4
   }
 ];
